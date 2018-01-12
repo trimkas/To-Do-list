@@ -2,6 +2,6 @@
 function addTask(){
 		
 		var task = $('#inputtask').val();
-		$('#task').append(task);
+		$('#tabela').append(task + "<br>");
 	}
 
