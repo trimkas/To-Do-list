@@ -2,24 +2,32 @@
 	<head>
 		<title> My Todo App</title>
 		<link href ="inc/css/style.css" rel = "stylesheet" type = "text/css">
+		
 	</head>
 
 	<body>
-		
+		<div class = "container">
 			<input type="text" placeholder= "Enter to-do here..." id="inputtask"> 
-			<button value = "add" onclick="addTask()"> add task </button>
+			<button onclick="addTask()"> add task </button>
 
 
-			<div id ="tabela">
-				<p> </p>
+			<ul id ="tabela">
+				
 
-			</div>
+			</ul>
 			
-		
+			<button> ALL </button>
+			<button> TO DO</button>
+			<button> DONE </button>
+		</div>	
+
+
+		<script src="inc/js/jquery.js"> </script>
+		<script src = "inc/js/logic.js"> </script>
+
 	</body>
 
 
-	<script src="inc/js/jquery.js"></script>
-	<script src = "inc/js/logic.js"> </script>
+	
 
 </html>
