@@ -1,9 +1,8 @@
-#A simple to do list.
+# A simple to do list.
 
 Features:
--adding tasks
-
--marking them done
+* adding tasks
+* marking them done
 
 
 To be added:
