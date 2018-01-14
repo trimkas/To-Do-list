@@ -1,5 +1,6 @@
-A simple to do list.
+# A simple to do list.
 
+<<<<<<< HEAD
 Change log:
 -adding tasks
 -marking them done
@@ -12,3 +13,15 @@ To be added:
 -add number of todo items
 -add X to delete tasks
 -make it look a bit better because it looks like something from 2002
+=======
+Features:
+* adding tasks
+* marking them done
+
+
+To be added:
+* map enter key to add task
+* map buttons to filter todo's
+* add counter of unfinished tasks
+* make it look a bit better because it looks like something from 2002
+>>>>>>> a736bef2a2d356dc4bf752db9aaf4f5b6921f419
