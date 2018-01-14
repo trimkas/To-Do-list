@@ -1,18 +1,52 @@
+* {
+	margin: 0;
+	padding: 0;
+}
 
+body{
+	font-family: Arial;
+}
+
+.container{
+	border: 1px solid black;
+	width: 270px;
+	margin: 10px auto;
+	padding: 10px;
+}
+
+input[type=text]{
+	width: 200px;
+}
+
+input[type=checkbox]{
+	margin-right: 5px;
+}
 
 ul{
 
 	list-style: none;
 }
 
+li {
+	margin: 10px;
+
+}
+
+.remove{
+	float: right;
+	cursor: pointer;
+	color: red;
+}
 
 .done{
 	text-decoration: line-through;
 }
 
 
-li {
-	font-family: arial;
 
+
+
+p{
+	margin-top: 10px;
 }
 

@@ -16,14 +16,17 @@
 
 			</ul>
 			
-			<button onclick = "filterAll()"> ALL </button>
-			<button onclick = "filterTodo()"> TO DO</button>
-			<button onclick = "filterDone()"> DONE </button>
+			<div class = "filterButtons">
+				<button onclick = "filterAll()"> ALL </button>
+				<button onclick = "filterTodo()"> TO DO</button>
+				<button onclick = "filterDone()"> DONE </button>
+			</div>
+			<p> You have <span id = "tasknumber"> </span> tasks to do </p>
 		</div>	
 
 
 		<script src="inc/js/jquery.js"> </script>
-		<script src = "inc/js/logic.js"> </script>
+		<script src="inc/js/logic.js"> </script>
 
 	</body>
 

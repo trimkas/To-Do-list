@@ -1,65 +1,102 @@
-	$( document ).ready(function() {
-		//maps enter when document is ready   		
-		mapEnter();
-
-	});
+$( document ).ready(function() {
+	//fire functions that do not have buttons	
+	mapEnter();
+	taskCounter();
 	
+});
 
-	//listens for keypress nr 13, which is ascii for enter
-	function mapEnter(){
-		$("#inputtask").on("keypress", function (e){
-			if(e.which === 13) {
-				addTask();
-			}
-		}) 
 
+//listens for keypress nr 13, which is ascii for enter
+function mapEnter(){
+	$("#inputtask").on("keypress", function (e){
+		if(e.which === 13) {
+			addTask();
+		}
+	}) 
+
+}
+
+function taskCounter(){
+	var taskNo = $(".item").length;
+	$("#tasknumber").text(taskNo);
+}
+
+function addTask(){
+
+	//a variable to get what's being inputted 
+	var task = $('#inputtask').val();
+
+		//to avoid empty todo's
+		if(task != ""){
+
+			//add an li element with checkbox to the list, with the task from input as text
+			$("#tabela").append('<li class = "item"><input type="checkbox">' + task + '<span class = "remove"> X </span></li>');
+			
+			// declare this, so it only strikes the unique li, not all of them
+			$("input:checkbox").click(function(){
+
+				var $this = $(this);
+				if (this.checked){
+					//input is a child of li, so this works!
+					$this.parent().removeClass();
+					$this.parent().addClass('done');
+				}else{
+					$this.parent().removeClass('done');
+					$this.parent().addClass('item');
+				}
+
+				taskCounter();
+			});
+
+			removeTask();
+
+		}
+
+	//clears the input
+	$("#inputtask").val("");
+	taskCounter();
+}
+
+function removeTask(){
+
+	$(".remove").click(function(){
+		var $this = $(this);
+		$this.parent().remove();
+		taskCounter();
+	});
+
+}
+
+
+
+function filterTodo(){
+
+	var x = $("li").hasClass("item");
+
+	if(x){
+
+		$("li").hide();
+		$("li.item").show();
+	
+	}else{
+		alert("you have no tasks to do!");
 	}
+}
 
-	function addTask(){
+function filterDone(){
 
-		//a variable to get what's being inputted 
-		var task = $('#inputtask').val();
+	var x = $("li").hasClass("done");
+	if(x){
 
-			//to avoid empty todo's
-			if(task != ""){
+		$("li").hide();
+		$("li.done").show();
+	}else{
+		alert("you have no finished tasks")
+	}
+}
 
-				//add an li element with checkbox to the list, with the task from input as text
-				$('#tabela').append('<li class = "item"><input type="checkbox">' + task + '</li>');
-				
-				// declare this, so it only strikes the unique li, not all of them
-				$('input:checkbox').click(function(){
-					var $this = $(this);
-					if (this.checked){
-						$this.parent().removeClass();
-						$this.parent().addClass('done');
-					}else{
-						$this.parent().removeClass('done');
-						$this.parent().addClass('item')
-					}
-				});
-
-			}
-
-			//clears the input
-			$('#inputtask').val('');
-		}
-
-
-
-		function filterTodo(){
-
-			$("li").hide();
-			$("li.item").show();
-		}
-
-		function filterDone(){
-
-			$("li").hide();
-			$("li.done").show();
-		}
-
-		
-		function filterAll(){
-			$("li").show();
-		}
+	
+function filterAll(){
+	$("li").show();
+}
 
